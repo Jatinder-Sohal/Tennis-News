@@ -23,13 +23,18 @@ function App() {
     }
     return (
         <div className="App">
-            <input
-                type="text"
-                value={player}
-                onChange={playerChange}
-                placeholder="Enter search query"
-            />
-            <button onClick={handleSearch}>Search</button>
+            <div className="top">
+                <div className="search-container">
+                    <input
+                        type="text"
+                        value={player}
+                        onChange={playerChange}
+                        placeholder="Enter a tennis player"
+                    />
+                    <button className="search-button" onClick={handleSearch}>Search</button>
+                </div>
+            </div>
+
             <h1>{result}</h1>
         </div>
     );
