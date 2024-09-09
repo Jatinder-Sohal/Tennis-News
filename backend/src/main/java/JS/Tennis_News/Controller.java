@@ -1,5 +1,8 @@
 package JS.Tennis_News;
 
+import java.io.IOException;
+
+import org.jsoup.Jsoup;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,7 +32,13 @@ public class Controller {
 
     @PostMapping("/search")
     public String search(@RequestBody SearchRequest searchRequest) {
-        return "You searched for: " + searchRequest.getPlayer();
+    	String test = "";
+    	try {
+			test = Jsoup.connect("https://en.wikipedia.org/").get().title();
+		} catch (IOException e) {
+			e.printStackTrace(); 
+		}
+        return "You searched for: " + test;
     }
 
 }
