@@ -3,6 +3,8 @@ package JS.Tennis_News;
 import java.io.IOException;
 
 import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,13 +34,17 @@ public class Controller {
 
     @PostMapping("/search")
     public String search(@RequestBody SearchRequest searchRequest) {
-    	String test = "";
+    	String test = null;
     	try {
-			test = Jsoup.connect("https://en.wikipedia.org/").get().title();
+			Document doc = Jsoup.connect("https://www.espn.com/tennis/rankings").userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36").get();
+			test = doc.getElementsByClass("AnchorLink").get(25).attr("href");
+			test = test + doc.getElementsByClass("AnchorLink").get(25).text();
+			
 		} catch (IOException e) {
 			e.printStackTrace(); 
 		}
-        return "You searched for: " + test;
+    	
+        return test;
     }
 
 }
