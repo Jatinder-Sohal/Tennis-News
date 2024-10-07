@@ -10,7 +10,8 @@ public class PlayerService {
     private JdbcTemplate jdbcTemplate;
 	
 	public void createTable() {
-        String sql = "CREATE TABLE IF NOT EXISTS players (" +
+        String sql = "DROP TABLE IF EXISTS PLAYERS; "+ 
+        			 "CREATE TABLE players (" +
                      "id SERIAL PRIMARY KEY, " +
                      "name VARCHAR(100), " +
                      "url VARCHAR(100))";

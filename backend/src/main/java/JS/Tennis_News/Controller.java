@@ -34,21 +34,23 @@ public class Controller {
             this.player = player;
         }
     }
-
-    @PostMapping("/search")
-    public String search(@RequestBody SearchRequest searchRequest) {
-    	String test = null;
+    
+    public void createTable(){
     	playerService.createTable();
     	try {
 			Document doc = Jsoup.connect("https://www.espn.com/tennis/rankings").userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36").get();
-			test = doc.getElementsByClass("AnchorLink").get(26).attr("href");
-			test = test + doc.getElementsByClass("AnchorLink").get(26).text();
-			playerService.insertPlayer(doc.getElementsByClass("AnchorLink").get(26).text(),doc.getElementsByClass("AnchorLink").get(26).attr("href"));
-			
+			for(int i = 26; i<= 175; i++) {
+				playerService.insertPlayer(doc.getElementsByClass("AnchorLink").get(i).text(),doc.getElementsByClass("AnchorLink").get(i).attr("href"));
+			}
 		} catch (IOException e) {
 			e.printStackTrace(); 
 		}
-    	
+    }
+
+    @PostMapping("/search")
+    public String search(@RequestBody SearchRequest searchRequest) {
+    	createTable();
+    	String test = null;
         return test;
     }
 

@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0a80e7fd-d752-4cb3-92a9-a5709af931c8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/JS/Tennis_News/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/JS/Tennis_News/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/JS/Tennis_News/config.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/JS/Tennis_News/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/JS/Tennis_News/PlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/JS/Tennis_News/PlayerService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +88,7 @@
       <workItem from="1721218824386" duration="807000" />
       <workItem from="1721219652248" duration="138000" />
       <workItem from="1725884230916" duration="100000" />
-      <workItem from="1725884349216" duration="7336000" />
+      <workItem from="1725884349216" duration="10379000" />
     </task>
     <servers />
   </component>
